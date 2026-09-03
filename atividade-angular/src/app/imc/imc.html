@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h3>Calculadora de IMC</h3>
+
+  <div class="mb-3">
+    <label class="form-label">Peso (kg)</label>
+    <input type="number" [(ngModel)]="peso" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Altura (m)</label>
+    <input type="number" [(ngModel)]="altura" class="form-control" />
+  </div>
+
+  <button class="btn btn-primary" (click)="calcular()">Calcular</button>
+
+  @if (calculado) {
+    <div class="alert alert-info mt-3">
+      IMC: {{ imc | number:'1.2-2' }} — Classificação: {{ classificacao }}
+    </div>
+  }
+</div>

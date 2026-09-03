@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h3>Calcular Média</h3>
+  <div class="mb-3">
+    <label class="form-label">AC1</label>
+    <input type="number" [(ngModel)]="ac1" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">AC2</label>
+    <input type="number" [(ngModel)]="ac2" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">AG</label>
+    <input type="number" [(ngModel)]="ag" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">AF</label>
+    <input type="number" [(ngModel)]="af" class="form-control" />
+  </div>
+
+  <button class="btn btn-primary" (click)="calcular()">Calcular</button>
+
+  @if (calculado) {
+    <div class="alert mt-3" [class.alert-success]="media >= 5" [class.alert-danger]="media < 5">
+      Média Final: {{ media | number:'1.2-2' }} —
+      @if (media >= 5) {
+        Aprovado
+      } @else {
+        Reprovado
+      }
+    </div>
+  }
+</div>

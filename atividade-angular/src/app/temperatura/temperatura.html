@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h3>Conversor de Temperatura</h3>
+
+  <div class="mb-3">
+    <label class="form-label">Temperatura em Celsius</label>
+    <input type="number" [(ngModel)]="celsius" class="form-control" />
+  </div>
+
+  <button class="btn btn-primary" (click)="converter()">Converter</button>
+
+  @if (calculado) {
+    <div class="mt-3">
+      <label class="form-label">Fahrenheit</label>
+      <input type="text" [value]="fahrenheit | number:'1.2-2'" class="form-control" readonly />
+    </div>
+    <div class="mt-3">
+      <label class="form-label">Kelvin</label>
+      <input type="text" [value]="kelvin | number:'1.2-2'" class="form-control" readonly />
+    </div>
+  }
+</div>
